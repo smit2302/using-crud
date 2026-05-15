@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Product Management System</h1>
+            <p class="subtitle">CRUD Operations with Local Storage</p>
+        </header>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2 id="formTitle">➕ Add New Product</h2>
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="title">Product Title *</label>
+                        <input type="text" id="title" placeholder="Enter product name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">Price ($) *</label>
+                        <input type="number" id="price" placeholder="Enter price" min="0" step="0.01" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="image">Image URL</label>
+                        <input type="url" id="image" placeholder="[example.com](https://example.com/image.jpg)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category">
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="books">Books</option>
+                            <option value="home">Home & Garden</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn" id="submitBtn">Add Product</button>
+                    <button type="button" class="btn btn-cancel" id="cancelBtn" style="display: none;">Cancel Edit</button>
+                </form>
+            </div>
+
+            <div class="products-section">
+                <div class="controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="🔍 Search products by title...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="books">Books</option>
+                            <option value="home">Home & Garden</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <select id="sortSelect">
+                            <option value="">Sort by...</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="title-asc">Title: A to Z</option>
+                            <option value="title-desc">Title: Z to A</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid" id="productList">
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-value" id="totalProducts">0</div>
+                <div class="stat-label">Total Products</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="totalValue">$0.00</div>
+                <div class="stat-label">Total Value</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value" id="avgPrice">$0.00</div>
+                <div class="stat-label">Average Price</div>
+            </div>
+        </div>
+
+        <div class="notification" id="notification"></div>
+    </div>
+
+    <script src="script.js"></script>
+   
+   
+</body>
+</html>
